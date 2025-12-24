@@ -1,4 +1,9 @@
 User-agent: *
 Allow: /
 
+# Block non-indexable UI and query-based URLs
+Disallow: /search.html
+Disallow: /*?
+
+# Sitemap index (Cloudflare Pages compatible)
 Sitemap: https://seekrhub.pro/sitemap.xml
