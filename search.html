@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Professional Search Builder | SeekrHub</title>
+
+    <meta
+        name="description"
+        content="Build advanced professional search queries using role, industry, country, and keywords. SeekrHub helps you launch precise searches on the public web."
+    />
+
+    <!-- Tool page: do not index, but allow link flow -->
+    <meta name="robots" content="noindex, follow" />
+
+    <link rel="stylesheet" href="assets/css/main.css" />
+
+    <style>
+        .search-builder {
+            max-width: 720px;
+            margin: 0 auto;
+        }
+
+        .search-builder form {
+            display: grid;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        .search-builder label {
+            font-weight: 600;
+        }
+
+        .search-builder input {
+            padding: 0.6rem;
+            font-size: 1rem;
+            width: 100%;
+        }
+
+        .search-builder button {
+            margin-top: 1.5rem;
+            padding: 0.8rem;
+            font-size: 1.05rem;
+            font-weight: 600;
+            cursor: pointer;
+        }
+
+        .note {
+            font-size: 0.9rem;
+            color: #555;
+            margin-top: 1.5rem;
+        }
+    </style>
+
+    <script>
+        function getParam(name) {
+            const params = new URLSearchParams(window.location.search);
+            return params.get(name) || "";
+        }
+
+        function runSearch() {
+            const role = document.getElementById("role").value.trim();
+            const industry = document.getElementById("industry").value.trim();
+            const country = document.getElementById("country").value.trim();
+            const keywords = document.getElementById("keywords").value.trim();
+
+            if (!role || !country) {
+                alert("Please enter at least a role and a country.");
+                return;
+            }
+
+            const queryParts = [
+                "site:linkedin.com/in",
+                `"${role}"`,
+                industry ? `"${industry}"` : "",
+                `"${country}"`,
+                keywords
+            ].filter(Boolean);
+
+            const query = queryParts.join(" ");
+            const googleUrl =
+                "https://www.google.com/search?q=" +
+                encodeURIComponent(query);
+
+            window.open(googleUrl, "_blank", "noopener");
+        }
+
+        document.addEventListener("DOMContentLoaded", () => {
+            // Optional prefill from role/country pages
+            const roleParam = getParam("role");
+            const countryParam = getParam("country");
+
+            if (roleParam) {
+                document.getElementById("role").value =
+                    roleParam.replace(/-/g, " ");
+            }
+
+            if (countryParam) {
+                document.getElementById("country").value =
+                    countryParam.replace(/-/g, " ");
+            }
+        });
+    </script>
+</head>
+
+<body>
+
+<header>
+    <div class="site-header">
+        <a href="index.html">
+            <img
+                src="assets/img/seekrhub-logo.svg"
+                alt="SeekrHub logo"
+                class="site-logo"
+                width="48"
+                height="48"
+            />
+        </a>
+
+        <h1>Professional Search Builder</h1>
+
+        <p class="tagline">
+            Build precise professional search queries using role, industry, and location
+        </p>
+    </div>
+</header>
+
+<main class="search-builder">
+
+    <section>
+        <p>
+            Use this tool to construct advanced professional search queries.
+            Enter a role, industry, country, and optional keywords. When you
+            click search, a new tab will open with the generated query on Google.
+        </p>
+    </section>
+
+    <section>
+        <form onsubmit="event.preventDefault(); runSearch();">
+            <div>
+                <label for="role">Role</label>
+                <input
+                    type="text"
+                    id="role"
+                    placeholder="e.g. Data Analyst"
+                    required
+                />
+            </div>
+
+            <div>
+                <label for="industry">Industry</label>
+                <input
+                    type="text"
+                    id="industry"
+                    placeholder="e.g. Finance, Healthcare, Technology"
+                />
+            </div>
+
+            <div>
+                <label for="country">Country</label>
+                <input
+                    type="text"
+                    id="country"
+                    placeholder="e.g. United States"
+                    required
+                />
+            </div>
+
+            <div>
+                <label for="keywords">Keywords</label>
+                <input
+                    type="text"
+                    id="keywords"
+                    placeholder="e.g. Python SQL AWS"
+                />
+            </div>
+
+            <button type="submit">
+                Search
+            </button>
+        </form>
+
+        <p class="note">
+            This tool launches a public web search in a new tab.
+            SeekrHub does not display, store, or process individual profiles.
+        </p>
+    </section>
+
+</main>
+
+<footer>
+    <nav>
+        <a href="about.html">About</a> |
+        <a href="privacy.html">Privacy Policy</a> |
+        <a href="terms.html">Terms</a> |
+        <a href="contact.html">Contact</a>
+    </nav>
+
+    <p class="footer-note">
+        © 2025 SeekrHub. All rights reserved.
+    </p>
+</footer>
+
+</body>
+</html>
