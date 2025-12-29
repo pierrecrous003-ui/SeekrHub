@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>{{PAGE_TITLE}}</title>
+    <meta name="description" content="{{META_DESCRIPTION}}" />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="{{CANONICAL_URL}}" />
+
+    <!-- ROOT-RELATIVE CSS (FIXED) -->
+    <link rel="stylesheet" href="/assets/css/main.css" />
+</head>
+
+<body>
+
+<header>
+    <div class="site-header">
+        <!-- ROOT-RELATIVE HOME LINK + LOGO (FIXED) -->
+        <a href="/">
+            <img
+                src="/assets/img/seekrhub-logo.svg"
+                alt="SeekrHub logo"
+                width="48"
+                height="48"
+            />
+        </a>
+
+        <h1>{{H1_TITLE}}</h1>
+
+        <p class="tagline">
+            {{TAGLINE_TEXT}}
+        </p>
+    </div>
+</header>
+
+<main>
+
+    {{CONTENT_BLOCKS}}
+
+    <!-- CTA MUST EXIST (ROOT-RELATIVE, FIXED) -->
+    <section class="cta">
+        <h2>Explore Real Job Opportunities</h2>
+        <p>
+            This page provides general role insights.
+            To explore real job listings, hiring trends, and search strategies,
+            use SeekrHub Search.
+        </p>
+        <p>
+            <a href="/search.html">Go to Job Search →</a>
+        </p>
+    </section>
+
+</main>
+
+<footer>
+    <nav>
+        <!-- ROOT-RELATIVE NAV (FIXED) -->
+        <a href="/about.html">About</a> |
+        <a href="/privacy.html">Privacy</a> |
+        <a href="/terms.html">Terms</a> |
+        <a href="/contact.html">Contact</a>
+    </nav>
+
+    <p class="footer-note">
+        © 2025 SeekrHub. All rights reserved.
+    </p>
+</footer>
+
+</body>
+</html>
