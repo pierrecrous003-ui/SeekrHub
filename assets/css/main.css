@@ -24,32 +24,17 @@ header {
 }
 
 /* =========================
-   Logo (default: People pages)
+   LOGO — THIS IS THE FIX
    ========================= */
 
 .site-logo {
-    width: 48px;
+    width: 260px;              /* visual size you expect */
     height: auto;
     display: block;
     margin: 0 auto 1rem auto;
+
+    /* FORCE SVG TO FILL */
     object-fit: contain;
-}
-
-/* =========================
-   Logo override (Insight pages only)
-   ========================= */
-
-body.insight-page .site-logo {
-    width: 260px;
-    height: auto;
-    max-width: 100%;
-}
-
-/* Mobile adjustment */
-@media (max-width: 640px) {
-    body.insight-page .site-logo {
-        width: 200px;
-    }
 }
 
 /* =========================
