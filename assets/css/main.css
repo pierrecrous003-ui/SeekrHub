@@ -24,16 +24,15 @@ header {
 }
 
 /* =========================
-   LOGO — THIS IS THE FIX
+   LOGO — PROMINENT HEADER
    ========================= */
 
 .site-logo {
-    width: 260px;              /* visual size you expect */
+    width: 80%;
+    max-width: 720px;     /* 80% of 900px header */
     height: auto;
     display: block;
-    margin: 0 auto 1rem auto;
-
-    /* FORCE SVG TO FILL */
+    margin: 0 auto 1.5rem auto;
     object-fit: contain;
 }
 
