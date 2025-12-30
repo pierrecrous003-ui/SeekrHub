@@ -1,4 +1,4 @@
-<svg width="560" height="90" viewBox="0 0 560 90" fill="none" xmlns="http://www.w3.org/2000/svg">
+<svg width="560" height="120" viewBox="0 0 560 120" fill="none" xmlns="http://www.w3.org/2000/svg">
   <style>
     .mono {
       font-family: "JetBrains Mono", "Fira Mono", "Courier New", monospace;
@@ -8,11 +8,19 @@
     .seekr { fill:#0A58FF; }
     .divider { fill:#000000; }
     .hub { fill:#000000; }
+
+    .subtitle {
+      font-family: "JetBrains Mono", "Fira Mono", "Courier New", monospace;
+      font-weight: 700;
+      font-size: 18px;
+      fill: #000000;
+      letter-spacing: 0.3px;
+    }
   </style>
 
-  <!-- each character aligned to a fixed 60px grid -->
-  <text x="0" y="60" class="mono seekr">s</text>
-  <text x="60" y="60" class="mono seekr">e</text>
+  <!-- wordmark -->
+  <text x="0"   y="60" class="mono seekr">s</text>
+  <text x="60"  y="60" class="mono seekr">e</text>
   <text x="120" y="60" class="mono seekr">e</text>
   <text x="180" y="60" class="mono seekr">k</text>
   <text x="240" y="60" class="mono seekr">r</text>
@@ -22,4 +30,9 @@
   <text x="360" y="60" class="mono hub">h</text>
   <text x="420" y="60" class="mono hub">u</text>
   <text x="480" y="60" class="mono hub">b</text>
+
+  <!-- subtitle (bold, left-aligned) -->
+  <text x="0" y="100" class="subtitle">
+    Search for Professionals
+  </text>
 </svg>
