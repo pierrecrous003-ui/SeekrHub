@@ -29,7 +29,7 @@ header {
 
 .site-logo {
     width: 80%;
-    max-width: 720px;     /* 80% of 900px header */
+    max-width: 720px;
     height: auto;
     display: block;
     margin: 0 auto 1.5rem auto;
@@ -82,14 +82,56 @@ ul {
 }
 
 /* =========================
-   CTA section
+   CTA section (GLOBAL)
    ========================= */
 
 .cta {
+    text-align: center;
     margin-top: 3rem;
-    padding: 1.5rem;
-    background-color: #f6f8ff;
+    padding: 2.5rem 2rem;
+    background-color: #f5f7fb;
     border-left: 4px solid #0a58ff;
+}
+
+.cta h2 {
+    margin-bottom: 1rem;
+}
+
+.cta p {
+    max-width: 720px;
+    margin: 0.75rem auto;
+}
+
+.cta-button {
+    display: inline-block;
+    margin-top: 1.5rem;
+    padding: 0.9rem 1.8rem;
+    background-color: #0a58ff;
+    color: #ffffff;
+    font-weight: 600;
+    text-decoration: none;
+    border-radius: 6px;
+    font-size: 1rem;
+}
+
+.cta-button:hover {
+    background-color: #0846cc;
+    text-decoration: none;
+}
+
+.cta-secondary {
+    margin-top: 1.25rem;
+    font-size: 0.95rem;
+}
+
+.cta-secondary a {
+    font-weight: 500;
+}
+
+.cta-note {
+    margin-top: 1.5rem;
+    font-size: 0.8rem;
+    color: #555;
 }
 
 /* =========================
